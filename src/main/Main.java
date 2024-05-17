@@ -98,7 +98,30 @@ public class Main {
                                     "Monto Ingresado : " + amount + "\n" +
                                     "Tasa de Cambio  : " + conversor.getConversionRate() + "\n" +
                                     "Monto Convertido: " + conversor.getConversionResult());
-                System.out.println("************************************\n");
+                System.out.println("************************************");
+
+                System.out.println( "Desea volver al menú principal? Escriba el número de opción correcto:\n" +
+                                    "1) Si\n" +
+                                    "2) No");
+                int continuar = sc.nextInt();
+                try{
+                    if(continuar == 1){
+                        for (int j=3; j!=0; j--){
+                            System.out.println("Regresando al menú principal en "+ j);
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException o) {
+                                o.printStackTrace();
+                            }
+                        }
+                    }if(continuar == 2) {
+                        break;
+                    }
+                }catch(RuntimeException e){
+                    //It's working with the other catch thanks for the scope I think.
+                }
+
+
             }catch(RuntimeException e){
                 System.out.println("************************************");
                 System.out.println(">>>> ERROR: CARÁCTER INVÁLIDO!!!!!!!");
