@@ -1,61 +1,119 @@
 package main;
 
-import com.google.gson.FieldNamingPolicy;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import models.ApiConnection;
 import models.Conversor;
-import models.ConversorRecord;
-
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Hello, write the number of the option: \n" +
-                            "1) Currency Exchange\n" +
-                            "2) Exit");
-        int respuesta = sc.nextInt();
-        sc.nextLine();
 
-        while (respuesta == 1) {
+        String apiKey = "f4de335d568beee28d8f4751";
 
-            System.out.println("Please, write de currency you have: (Example:'USD')");
-            String baseCoin = sc.nextLine();
-            System.out.println("Please, write the currency you want to convert to: (Example:'CAD')");
-            String targetCoin = sc.nextLine();
-            System.out.println("Finally, write the amount of money you want to convert:");
-            String amount = sc.nextLine();
-
-            String apiKey = "f4de335d568beee28d8f4751";
-            String url = "https://v6.exchangerate-api.com/v6/" + apiKey + "/pair/" + baseCoin + "/" + targetCoin + "/" + amount;
-
-            ApiConnection apiConnection = new ApiConnection(url);
-            Conversor conversor = new Conversor(apiConnection.getResponseBody());
+        String baseCoin = "";
+        String targetCoin = "";
+        String amount = "";
+        int start = 1;
 
 
-            System.out.println("************************************");
-            System.out.println("Base: " + conversor.getBaseCoin() + "\n" +
-                    "Target : " + conversor.getTargetCoin() + "\n" +
-                    "Amount : " + amount + "\n" +
-                    "Rate   : " + conversor.getConversionRate() + "\n" +
-                    "Results: " + conversor.getConversionResult());
-            System.out.println("************************************\n");
+        while (start == 1) {
+            try{
+                Scanner sc = new Scanner(System.in);
+                System.out.println( "****************************************\n" +
+                        "Hola, bienvenido al Conversor de Monedas: \n" +
+                        "1) Dolar           >>>  Peso Argentino\n" +
+                        "2) Peso Argentino  >>>  Dolar\n" +
+                        "3) Dolar           >>>  Real Brasileño\n" +
+                        "4) Real Brasileño  >>>  Dolar\n" +
+                        "5) Dolar           >>>  Peso Colombiano\n" +
+                        "6) Peso Colombiano >>>  Dolar\n" +
+                        "7) Salir\n" +
+                        "Elija una número válido:");
 
-            System.out.println("Hello, write the number of the option: \n" +
-                    "1 Currency Exchange\n" +
-                    "2 Exit");
-            respuesta = sc.nextInt();
-            sc.nextLine();
+                int option = sc.nextInt();
+                sc.nextLine();
+
+                while(option < 1 || option > 7){
+                    System.out.println("Opción no válida, por favor ingrese una opción válida: ");
+                    option = sc.nextInt();
+                    sc.nextLine();
+                }
+
+                switch (option){
+                    case 1:
+                        baseCoin = "USD";
+                        targetCoin = "ARS";
+                        System.out.println("Ingrese el monto a convertir: ");
+                        amount = sc.nextLine();
+                        break;
+                    case 2:
+                        baseCoin = "ARS";
+                        targetCoin = "USD";
+                        System.out.println("Ingrese el monto a convertir: ");
+                        amount = sc.nextLine();
+                        break;
+                    case 3:
+                        baseCoin = "USD";
+                        targetCoin = "BRL";
+                        System.out.println("Ingrese el monto a convertir: ");
+                        amount = sc.nextLine();
+                        break;
+                    case 4:
+                        baseCoin = "BRL";
+                        targetCoin = "USD";
+                        System.out.println("Ingrese el monto a convertir: ");
+                        amount = sc.nextLine();
+                        break;
+                    case 5:
+                        baseCoin = "USD";
+                        targetCoin = "COP";
+                        System.out.println("Ingrese el monto a convertir: ");
+                        amount = sc.nextLine();
+                        break;
+                    case 6:
+                        baseCoin = "COP";
+                        targetCoin = "USD";
+                        System.out.println("Ingrese el monto a convertir: ");
+                        amount = sc.nextLine();
+                        break;
+                    case 7:
+                        System.out.println("Muchas gracias por visitarnos!");
+                        start = 7;
+                        break;
+                }
+
+                if (start == 7){
+                    System.out.println("Finalizando Programa...");
+                    break;
+                }
+
+                String url = "https://v6.exchangerate-api.com/v6/" + apiKey + "/pair/" + baseCoin + "/" + targetCoin + "/" + amount;
+                ApiConnection apiConnection = new ApiConnection(url);
+                Conversor conversor = new Conversor(apiConnection.getResponseBody());
+
+                System.out.println("RESULTADO");
+                System.out.println("************************************");
+                System.out.println( "Moneda Base     : " + conversor.getBaseCoin() + "\n" +
+                                    "Moneda Objetivo : " + conversor.getTargetCoin() + "\n" +
+                                    "Monto Ingresado : " + amount + "\n" +
+                                    "Tasa de Cambio  : " + conversor.getConversionRate() + "\n" +
+                                    "Monto Convertido: " + conversor.getConversionResult());
+                System.out.println("************************************\n");
+            }catch(RuntimeException e){
+                System.out.println("************************************");
+                System.out.println(">>>> ERROR: CARÁCTER INVÁLIDO!!!!!!!");
+                for(int i = 10; i!=0; i--){
+                    System.out.println(">>>> Autodestrucción en: " + i);
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException o) {
+                        o.printStackTrace();
+                    }
+                }
+                System.out.println("************************************");
+                break;
+            }
         }
-        if(respuesta == 2) {
-            System.out.println("Thanks for using ExchangeRate");
-        }
-        else {
-            System.out.println("Incorrect Option");
-        }
-
 
     }
 }
