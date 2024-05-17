@@ -110,7 +110,7 @@ public class Main {
                         o.printStackTrace();
                     }
                 }
-                System.out.println("************************************");
+                System.out.println("Bromita, yo no te haré daño c: ");
                 break;
             }
         }
