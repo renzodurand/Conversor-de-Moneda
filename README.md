@@ -21,4 +21,4 @@
   `$ git clone https://github.com/AQUÍ-PON-TU-USUARIO/Conversor-de-Moneda.git`
  
 ## Ejecutar ▶️
-- Desde Main.java
+- Desde src/main/Main.java
