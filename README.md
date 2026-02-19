@@ -18,7 +18,7 @@
 ## Quieres llevarte el proyecto? 📎
 - Lleva el proyecto a tu pc:
 
-  `$ git clone https://github.com/AQUÍ-PON-TU-USUARIO/Conversor-de-Moneda.git`
+  `$ git clone https://github.com/renzodurand/Conversor-de-Moneda.git`
  
 ## Ejecutar ▶️
 - Desde src/main/Main.java
