@@ -28,5 +28,4 @@ Este proyecto es un convertidor de divisas interactivo desarrollado como parte d
 - Corre el proyecto desde el archivo `src/main/Main.java`.
 
 ## 📩 Contacto
-Desarrollado con dedicación por `Renzo Durand`.
-
+- Desarrollado con dedicación por `Renzo Durand`.
