@@ -8,13 +8,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String apiKey = "f4de335d568beee28d8f4751";
+        String apiKey = "TU_API_KEY_AQUI";
 
         String baseCoin = "";
         String targetCoin = "";
         String amount = "";
         int start = 1;
-
 
         while (start == 1) {
             try{
