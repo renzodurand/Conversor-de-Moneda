@@ -20,3 +20,13 @@ Este proyecto es un convertidor de divisas interactivo desarrollado como parte d
 1. **Clonar el repositorio:**
    ```bash
    git clone [https://github.com/renzodurand/Conversor-de-Moneda.git](https://github.com/renzodurand/Conversor-de-Moneda.git)
+   
+2. **Configuración:**
+- Asegúrate de incluir tu propia API Key en la variable apiKey dentro de `Main.java`.
+  
+3. **Ejecución:**
+- Corre el proyecto desde el archivo `src/main/Main.java`.
+
+## 📩 Contacto
+Desarrollado con dedicación por `Renzo Durand`.
+
