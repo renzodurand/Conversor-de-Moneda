@@ -1,24 +1,22 @@
-# Conversor de Monedas 🪙
+# 💱 Conversor de Monedas - Java
 
-- Este proyecto es un convertidor de monedas desarrollado con Java. Soy Estudiante de Alura y este proyecto fue parte de mi aprendizaje. Como objetivo, se tenía que usar los conocimientos aprendidos durante el período de estudios y demostrar mi habilidad en programación con Java e integración de APIs.
+Este proyecto es un convertidor de divisas interactivo desarrollado como parte del programa de formación de **Alura**. El objetivo principal fue demostrar habilidades en lógica de programación con Java y la integración de servicios externos mediante APIs.
 
-## Utilidad 💻
-- Convierte diferentes montos de dinero con opciones ya preestablecidas.
-- Envía mensajes falsos de autodestrucción si envías opciones no válidas.
-- Valida que no se ingresen carácteres no permitidos.
+## 🚀 Funcionalidades
+- **Conversiones en tiempo real:** Obtiene tasas de cambio actualizadas.
+- **Menú interactivo:** Interfaz de consola amigable para el usuario.
+- **Validación robusta:** Manejo de excepciones para caracteres inválidos y opciones fuera de rango.
+- **Toque creativo:** Incluye mensajes personalizados de error para una mejor experiencia de usuario.
 
-## Herramientas ⚙️
-- IntelliJ
-- Java 17
-- Gson
-- Postman
-- ExchangeRate-API (https://www.exchangerate-api.com/)
-- Git
+## ⚙️ Tecnologías y Herramientas
+* **Lenguaje:** Java 17
+* **Librerías:** [Gson](https://github.com/google/gson) (Manejo de JSON)
+* **API:** [ExchangeRate-API](https://www.exchangerate-api.com/)
+* **Entorno:** IntelliJ IDEA / VS Code
+* **Pruebas de API:** Postman
 
-## Quieres llevarte el proyecto? 📎
-- Lleva el proyecto a tu pc:
+## 🛠️ Instalación y Uso
 
-  `$ git clone https://github.com/renzodurand/Conversor-de-Moneda.git`
- 
-## Ejecutar ▶️
-- Desde src/main/Main.java
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/renzodurand/Conversor-de-Moneda.git](https://github.com/renzodurand/Conversor-de-Moneda.git)
